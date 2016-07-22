@@ -25,8 +25,9 @@
 .window {
   width: 104px;
   height: 88px;
-  margin: 0px;
+  margin: auto;
   float: left;
+  position: relative;
   display: inline-block;
   background-image: url(images/window.png);
 }
@@ -35,6 +36,7 @@
   width: 104px;
   height: 88px;
   margin: 0px;
+  position: relative;
   float: left;
   display: inline-block;
   background-image: url(images/graff.png);
@@ -52,6 +54,9 @@
   z-index: 3;
   height: 50px;
   width: 40px;
+  background-image: url(images/copTest.png);
+  transition: top .75s, left 1s;
+  transition-timing-function: linear;
 }
 
 .graffitiBox {
@@ -63,4 +68,14 @@
   top: 100px;
   left: 200px;
 
+}
+
+p {
+  margin: auto;
+  width: 2em;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  text-align: center;
+  font-size: 300%;
 }
