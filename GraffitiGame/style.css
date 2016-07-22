@@ -1,0 +1,66 @@
+#apt {
+  background-image: url(images/testBackground.jpeg);
+  display: block;
+  margin:auto;
+  padding: 0;
+  margin: auto;
+  height: 450px;
+  width: 728px;
+  z-index: 0;
+}
+
+.rowOne {
+  width: 728px;
+  height: 88px;
+  margin: 0;
+}
+
+.rowTwo {
+  width: 728px;
+  height: 88px;
+  margin: 0;
+  clear: both;
+}
+
+.window {
+  width: 104px;
+  height: 88px;
+  margin: 0px;
+  float: left;
+  display: inline-block;
+  background-image: url(images/window.png);
+}
+
+.tagTarget {
+  width: 104px;
+  height: 88px;
+  margin: 0px;
+  float: left;
+  display: inline-block;
+  background-image: url(images/graff.png);
+}
+
+#mario {
+  position: absolute;
+  height: 50px;
+  width: 40px;
+  z-index: 2;
+}
+
+.cop {
+  position: absolute;
+  z-index: 3;
+  height: 50px;
+  width: 40px;
+}
+
+.graffitiBox {
+  color: rgba(255,0,0,0.5);
+  position: absolute;
+  z-index: 1;
+  height: 50px;
+  width: 40px;
+  top: 100px;
+  left: 200px;
+
+}
