@@ -1,6 +1,7 @@
 "use strict";
 (function(){
   console.log('javascript loaded');
+  $(document).ready(function(){
 
 
   var $mario = $('#mario');
@@ -88,78 +89,92 @@ function copDown(){
   setTimeout(function() {
       cop.css("top", "118px");
     }, 2000);
+
+}
+function animateCop(){
+$('#cop1')
+  .animate({"top":"118"}, 1500, 'linear')
+  .animate({"left":"1148"}, 4000, 'linear')
+  .animate({"left":"360"}, 3000, 'linear')
+
 }
 
-function copRow1(){
-  var cop =$('#cop1');
-  var coinL = Math.floor(Math.random()*2);
-  var coinT = Math.floor(Math.random()*2);
-  if (coinL===1){console.log('left');
-}
-  else console.log('right; not yet')
-  }
+
+
 
   /////cop MOVE
 
 
-function movOne(){
+// function movOne(){   //straight to  #2
+//       var cop = $('#cop1');
+//       cop.animate({'left': })
+//       cop.animate({'left':})
+//       var copMov = cop.css("left");
+//       copMov = copMov.substring(0, copMov.length-2);
+//       copMov = Number(copMov);
+//       if(copMov<824){
+//         for(var i=copMov;i<=824;i+=146)
+//           setTimeout(function(){
+//           cop.css("left",i+"px");
+//         }, 1000)
+//       }
+//       else if (copMov>824){
+//         for(var i=copMov;i>=824;i-=146)
+//           setTimeout(function(){
+//           cop.css("left",i+"px");
+//         }, 1000)
+//       }
+//       else cop.css("top", "206px")
+//     };
+
+function getLeftVal(){
       var cop = $('#cop1');
       var copMov = cop.css("left");
       copMov = copMov.substring(0, copMov.length-2);
       copMov = Number(copMov);
-      if(copMov<824){
-        for(var i=copMov;i<=824;i+=146)
-          setTimeout(function(){
-          cop.css("left",i+"px");
-        }, 1000)
-      }
-      else if (copMov>824){
-        for(var i=copMov;i>=824;i-=146)
-          setTimeout(function(){
-          cop.css("left",i+"px");
-        }, 1000)
-      }
-      else cop.css("top", "206px")
-    };
+      return copMov
+}
 
-function copRight(){
+function goRight(){
       var cop = $('#cop1');
       var copMov = cop.css("left");
-      copMov = copMov.substring(0, copMov.length-2)
-      copMov = Number(copMov)
-      if (copMov<=1048){
-        copMov += 88;
-        cop.css("left", copMov+"px")
-        }
-      else copLeft
-  }
+      copMov = copMov.substring(0, copMov.length-2);
+      copMov = Number(copMov);
+        for(var i=copMov;;i+=7.3){
+          setInterval(function(){
+          cop.css("left",i+"px");
+        }, 50)
+          console.log('Right'+i)
+          if(1048-i<=7.3) break};
+}
 
-    $body.keydown(function(event){
-    if(event.which === 40){  //down
-      var $marioMov = $mario.css("top")
-      $marioMov = $marioMov.substring(0, $marioMov.length-2)
-      $marioMov = Number($marioMov)
-      $marioMov += 15
-      $mario.css("top", $marioMov+"px")
-    }
-  })
-  $body.keydown(function(event){
-    if(event.which === 38){  //up
-      var $marioMov = $mario.css("top");
-      $marioMov = $marioMov.substring(0, $marioMov.length-2)
-      $marioMov = Number($marioMov)
-      $marioMov -= 15
-      $mario.css("top", $marioMov+"px")
-    }
-  })
+
+
+function goLeft(){
+      var cop = $('#cop1');
+      var copMov = cop.css("left");
+      copMov = copMov.substring(0, copMov.length-2);
+      copMov = Number(copMov);
+      for(var q=copMov;;q-=7.3){
+            setInterval(function(){
+            cop.css("left",q+"px")
+
+          }, 50);
+            console.log('Left'+q);
+          if (q-360<=1) {break};}};
+
+
 
 
 createCop(1);
 createCop(2);
 createCop(3);
-locateCop();
-copDown();
-setTimeout(movOne, 4000)
+animateCop();
+// goLeft();
+
+
+
+
 
 
 
@@ -175,6 +190,5 @@ setTimeout(movOne, 4000)
 
   // $('#one').text('TEST');
 
-
-
+})
 })();
