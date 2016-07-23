@@ -1,13 +1,16 @@
-
+body {
+  background-image: url(images/background.jpg);
+}
 header {
   padding: auto;
-  margin: auto;
+  margin: auto auto 14px auto;
   text-align: center;
   color: red;
   font-size: 30pt;
 }
-body {
-  background-image: url(images/background.jpg);
+
+h1 {
+  margin: 0;
 }
 
 #setting {
@@ -23,7 +26,6 @@ body {
   height: 450px;
   width: 728px;
   z-index: 0;
-  top: 250px;
 }
 
 .topBldg {
@@ -106,7 +108,7 @@ ul {
   padding: 0;
   margin: 50px auto;
   height: 100px;
-  width: 800px;
+  width: 900px;
 }
 
 li {
