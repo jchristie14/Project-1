@@ -76,21 +76,48 @@ function createCop(num){
 }
 
 
-function animateCop(){
-$('#cop1')
-  .animate({"top":"118"}, 100, 'linear')
-  .animate({"left":"1048"}, 700, 'linear')
-  .animate({"left":"350"}, 2500, 'linear')
-  .animate({"left":"464"}, 300, 'linear')
-  .animate({"top": "206"}, 100, 'linear')
+
+function animateCop(num){
+var start = "86"
+var row1 = "174"
+var row2 = "262"
+var row3 = "350"
+var row4 = "438"
+var ground = "536"
+var stair1 = "414"
+var stair2 = "934"
+var westEdge = "350"
+var eastEdge = "1048"
+$('#cop'+num)
+  .animate({"top":row1}, 300, 'linear')
+  .animate({"left":eastEdge}, 700, 'linear')
+  .animate({"left":westEdge}, 2500, 'linear')
+  .animate({"left":stair1}, 300, 'linear')
+  .animate({"top":row2}, 300, 'linear')
+  .animate({"left":eastEdge}, 2500, 'linear')
+  .animate({"left":stair2}, 200, 'linear')
+  .animate({"top":row3}, 300, 'linear')
 
 }
 
+function cop(){
+  var w = 1
+  setInterval(function(){
+    if (w<4){
+    createCop(w);
+    animateCop(w);
+    w++
+             }
+    else return
+  }, 2000)
 
-createCop(1);
-createCop(2);
-createCop(3);
-animateCop();
+}
+
+cop()
+// createCop(1);
+// createCop(2);
+// createCop(3);
+// animateCop();
 
 
 
