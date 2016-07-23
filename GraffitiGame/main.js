@@ -12,7 +12,7 @@
       var $marioMov = $mario.css("left");
       $marioMov = $marioMov.substring(0, $marioMov.length-2)
       $marioMov = Number($marioMov)
-      if ($marioMov<=1048){
+      if ($marioMov<=1038){
         $marioMov += 10;
         $mario.css("left", $marioMov+"px")
         }
@@ -75,7 +75,7 @@ function createCop(num){
   $('#apt').append(cop);
 }
 
-
+var copRoute =[
 
 function animateCop(num){
 var start = "86"
@@ -84,28 +84,178 @@ var row2 = "262"
 var row3 = "350"
 var row4 = "438"
 var ground = "536"
-var stair1 = "414"
-var stair2 = "934"
+var stairW = "414"
+var stairE = "934"
 var westEdge = "350"
 var eastEdge = "1048"
+var offScW = "-100"
+var offScE = "1500"
 $('#cop'+num)
-  .animate({"top":row1}, 300, 'linear')
-  .animate({"left":eastEdge}, 700, 'linear')
-  .animate({"left":westEdge}, 2500, 'linear')
-  .animate({"left":stair1}, 300, 'linear')
-  .animate({"top":row2}, 300, 'linear')
-  .animate({"left":eastEdge}, 2500, 'linear')
-  .animate({"left":stair2}, 200, 'linear')
-  .animate({"top":row3}, 300, 'linear')
+  .animate({"top":row1}, 300, 'linear') //1
+  .animate({"left":eastEdge}, 700, 'linear')  //1
+  .animate({"left":westEdge}, 2500, 'linear')  //1
+  .animate({"left":stairW}, 300, 'linear')  //1
+  .animate({"top":row2}, 300, 'linear')  //1
+  .animate({"left":eastEdge}, 2500, 'linear')  //1
+  .animate({"left":stairE}, 200, 'linear')  //1
+  .animate({"top":row3}, 300, 'linear')  //1
+  .animate({"left":eastEdge}, 200, 'linear')  //1
+  .animate({"left":westEdge}, 2500, 'linear')  //1
+  .animate({"left":stairE}, 2000, 'linear')  //1
+  .animate({"top":row4}, 300, 'linear')  //1
+  .animate({"left":stairW}, 2000, 'linear')  //1
+  .animate({"top":ground}, 325, 'linear')  //1
+  .animate({"left":offScE}, 3000, 'linear')  //1
+
+},
+
+function animateCop(num){
+var start = "86"
+var row1 = "174"
+var row2 = "262"
+var row3 = "350"
+var row4 = "438"
+var ground = "536"
+var stairW = "414"
+var stairE = "934"
+var westEdge = "350"
+var eastEdge = "1048"
+var offScW = "-100"
+var offScE = "1500"
+$('#cop'+num)
+
+  .animate({"top":row1}, 300, 'linear') //2
+  .animate({"left":eastEdge}, 700, 'linear')  //2
+  .animate({"left":eastEdge}, 200, 'linear')  //2
+  .animate({"left":stairW}, 300, 'linear')  //2
+  .animate({"top":row2}, 300, 'linear')  //2
+  .animate({"left":eastEdge}, 200, 'linear')  //2
+  .animate({"left":stairE}, 2000, 'linear')  //2
+  .animate({"top":row3}, 300, 'linear')  //2
+  .animate({"left":eastEdge}, 200, 'linear')  //2
+  .animate({"left":eastEdge}, 200, 'linear') //2
+  .animate({"left":stairE}, 2000, 'linear')  //2
+  .animate({"top":row4}, 300, 'linear')  //2
+  .animate({"left":eastEdge}, 200, 'linear')  //2
+  .animate({"left":stairW}, 300, 'linear')  //2
+  .animate({"top":ground}, 325, 'linear')  //2
+  .animate({"left":offScE}, 3000, 'linear')  //2
+
+},
+
+function animateCop(num){
+var start = "86"
+var row1 = "174"
+var row2 = "262"
+var row3 = "350"
+var row4 = "438"
+var ground = "536"
+var stairW = "414"
+var stairE = "934"
+var westEdge = "350"
+var eastEdge = "1048"
+var offScW = "-100"
+var offScE = "1500"
+$('#cop'+num)
+
+  .animate({"top":row1}, 300, 'linear')  //3
+  .animate({"left":eastEdge}, 200, 'linear')  //3
+  .animate({"left":eastEdge}, 200, 'linear')  //3
+  .animate({"left":stairE}, 2000, 'linear')  //3
+  .animate({"top":row2}, 300, 'linear')  //3
+  .animate({"left":eastEdge}, 200, 'linear')  //3
+  .animate({"left":eastEdge}, 200, 'linear')  //3
+  .animate({"left":stairW}, 300, 'linear')  //3
+  .animate({"top":row3}, 300, 'linear')  //3
+  .animate({"left":eastEdge}, 200, 'linear')  //3
+  .animate({"left":stairW}, 300, 'linear')  //3
+  .animate({"top":row4}, 300, 'linear')  //3
+  .animate({"left":eastEdge}, 200, 'linear')  //3
+  .animate({"left":stairE}, 2000, 'linear')  //3
+  .animate({"top":ground}, 325, 'linear')  //3
+  .animate({"left":offScE}, 3000, 'linear')  //3
+
+},
+
+function animateCop(num){
+var start = "86"
+var row1 = "174"
+var row2 = "262"
+var row3 = "350"
+var row4 = "438"
+var ground = "536"
+var stairW = "414"
+var stairE = "934"
+var westEdge = "350"
+var eastEdge = "1048"
+var offScW = "-100"
+var offScE = "1500"
+$('#cop'+num)
+
+  .animate({"top":row1}, 300, 'linear')  //4
+  .animate({"left":eastEdge}, 200, 'linear')  //4
+  .animate({"left":stairW}, 300, 'linear')  //4
+  .animate({"top":row2}, 300, 'linear')  //4
+  .animate({"left":eastEdge}, 200, 'linear')  //4
+  .animate({"left":eastEdge}, 200, 'linear')  //4
+  .animate({"left":stairW}, 300, 'linear')  //4
+  .animate({"top":row3}, 300, 'linear')  //4
+  .animate({"left":eastEdge}, 200, 'linear')  //4
+  .animate({"left":eastEdge}, 200, 'linear')  //4
+  .animate({"left":stairE}, 2000, 'linear')  //4
+  .animate({"top":row4}, 300, 'linear')  //4
+  .animate({"left":eastEdge}, 200, 'linear')  //4
+  .animate({"left":eastEdge}, 200, 'linear')  //4
+  .animate({"left":stairE}, 2000, 'linear')  //4
+  .animate({"top":ground}, 325, 'linear')  //4
+  .animate({"left":offScE}, 3000, 'linear')  //4
+
+},
+
+function animateCop(num){
+var start = "86"
+var row1 = "174"
+var row2 = "262"
+var row3 = "350"
+var row4 = "438"
+var ground = "536"
+var stairW = "414"
+var stairE = "934"
+var westEdge = "350"
+var eastEdge = "1048"
+var offScW = "-100"
+var offScE = "1500"
+$('#cop'+num)
+
+  .animate({"top":row1}, 300, 'linear')  //5
+  .animate({"left":eastEdge}, 200, 'linear')  //5
+  .animate({"left":stairW}, 300, 'linear')  //5
+  .animate({"top":row2}, 300, 'linear')  //5
+  .animate({"left":eastEdge}, 200, 'linear')  //5
+  .animate({"left":eastEdge}, 200, 'linear')  //5
+  .animate({"left":eastEdge}, 200, 'linear')  //5
+  .animate({"left":stairE}, 2000, 'linear')  //5
+  .animate({"top":row3}, 300, 'linear')  //5
+  .animate({"left":eastEdge}, 200, 'linear')  //5
+  .animate({"left":stairW}, 300, 'linear')  //5
+  .animate({"top":row4}, 300, 'linear')  //5
+  .animate({"left":eastEdge}, 200, 'linear')  //5
+  .animate({"left":eastEdge}, 200, 'linear')  //5
+  .animate({"left":stairW}, 300, 'linear')  //5
+  .animate({"top":ground}, 325, 'linear')  //5
+  .animate({"left":offScE}, 3000, 'linear')  //5
 
 }
+]
+
 
 function cop(){
   var w = 1
   setInterval(function(){
     if (w<4){
     createCop(w);
-    animateCop(w);
+    copRoute[0](w);
+    // animateCop(w);
     w++
              }
     else return
@@ -127,7 +277,7 @@ cop()
 
 
 
-// setInterval(collDetect, 1000);
+setInterval(collDetect, 1000);
 
   $body.keydown(function(event){
     if(event.which === 32){

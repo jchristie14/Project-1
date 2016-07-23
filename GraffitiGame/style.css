@@ -49,6 +49,14 @@ h1 {
   clear: both;
 }
 
+.ground {
+  width: 728px;
+  height: 98px;
+  margin: 0;
+  clear: both;
+  border: 2px solid black;
+}
+
 .window {
   width: 104px;
   height: 88px;
@@ -59,6 +67,16 @@ h1 {
   background-image: url(images/window.png);
 }
 
+.window p {
+  margin: auto;
+  width: 2em;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  text-align: center;
+  font-size: 300%;
+}
+
 .tagTarget {
   width: 104px;
   height: 88px;
@@ -67,6 +85,15 @@ h1 {
   float: left;
   display: inline-block;
   background-image: url(images/graff.png);
+}
+.tagTarget p {
+  margin: auto;
+  width: 2em;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  text-align: center;
+  font-size: 300%;
 }
 
 #mario {
@@ -88,18 +115,6 @@ h1 {
 /*   transition: top .75s, left 1s;
   transition-timing-function: linear; */
 }
-
-
-p {
-  margin: auto;
-  width: 2em;
-  position: absolute;
-  top: 50%;
-  transform: translate(0, -50%);
-  text-align: center;
-  font-size: 300%;
-}
-
 
 
 ul {
