@@ -31,12 +31,67 @@
   });
     $body.keydown(function(event){
     if(event.which === 40){  //down
-      var $marioMov = $mario.css("top")
-      $marioMov = $marioMov.substring(0, $marioMov.length-2)
-      $marioMov = Number($marioMov)
-      $marioMov += 15
-      $mario.css("top", $marioMov+"px")
+      var coord = $mario.position()
+      console.log(coord.left+' '+coord.top)
+      if (coord.left === 406 || coord.left === 416)
+      {switch (coord.top){
+        case 86:
+        $mario
+          .animate({"top":"174"}, 300, 'linear')
+        break;
+
+        case 174:
+        $mario
+         .animate({"top":"262"}, 300, 'linear')
+        break;
+
+        case 262:
+        $mario
+         .animate({"top":"350"}, 300, 'linear')
+        break;
+
+        case 350:
+        $mario
+         .animate({"top":"438"}, 300, 'linear')
+        break;
+
+        case 438:
+        $mario
+         .animate({"top":"536"}, 300, 'linear')
+        break;
+
+      }
     }
+      else if (coord.left === 926 || coord.left===936)
+      {switch (coord.top){
+        case 86:
+        $mario
+          .animate({"top":"174"}, 300, 'linear')
+        break;
+
+        case 174:
+        $mario
+         .animate({"top":"262"}, 300, 'linear')
+        break;
+
+        case 262:
+        $mario
+         .animate({"top":"350"}, 300, 'linear')
+        break;
+
+        case 350:
+        $mario
+         .animate({"top":"438"}, 300, 'linear')
+        break;
+
+        case 438:
+        $mario
+         .animate({"top":"536"}, 300, 'linear')
+        break;
+
+      }
+      }
+      else console.log('stop')}
   })
   $body.keydown(function(event){
     if(event.which === 38){  //up
@@ -309,19 +364,20 @@ $('#cop'+num)
 ]
 
 
-// function cop(){
-//   var w = 1;
-//   var q = Math.floor(Math.random()*5);
-//   setInterval(function(){
-//     {
-//     createCop(w);
-//     copRoute[q](w);
-//     // animateCop(w);
-//     w++;
-//              }
-//   }, 3000)
+function cop(){
+  var w = 1;
 
-// }
+  setInterval(function(){
+    {
+    var q = Math.floor(Math.random()*5);
+    createCop(w);
+    copRoute[q](w);
+    // animateCop(w);
+    w++;
+             }
+  }, 3000)
+
+}
 
 // cop()
 
