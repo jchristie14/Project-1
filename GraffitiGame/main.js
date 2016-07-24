@@ -382,7 +382,11 @@ function cop(){
 // cop()
 
 
-
+var tagPrompt = prompt("Enter your initials!");
+var $tag = $('<p class="tag">'+tagPrompt+'</p>');
+$tag.hide();
+$tag.appendTo('.tagTarget');
+$tag.appendTo('.tagTargetGround')
 
 
 
@@ -394,8 +398,85 @@ function cop(){
 
   $body.keydown(function(event){
     if(event.which === 32){
-      var marPosit = $mario.position();
-      grafTest.text('FUCK OFF');
+      var coord = $mario.position()
+      if (coord.left === 486)
+      {
+        switch (coord.top){
+
+        case 174:
+            $('#two>.tag').fadeIn('slow');
+        break;
+
+        case 262:
+          $('#nine>.tag').fadeIn('slow');
+        break;
+
+        case 350:
+          $('#sixteen>.tag').fadeIn('slow');
+        break;
+
+        case 438:
+          $('#twenty-three>.tag').fadeIn('slow');
+        break;
+
+        case 536:
+          console.log('NOT YET');
+        break;
+
+      }
+      }
+
+      else if (coord.left === 806)
+      {
+        switch (coord.top){
+
+        case 174:
+            $('#five>.tag').fadeIn('slow');
+        break;
+
+        case 262:
+          $('#twelve>.tag').fadeIn('slow');
+        break;
+
+        case 350:
+          $('#nineteen>.tag').fadeIn('slow');
+        break;
+
+        case 438:
+          $('#twenty-six>.tag').fadeIn('slow');
+        break;
+
+        case 536:
+          console.log('NOT YET');
+        break;
+      }
+      }
+
+      else if (coord.left === 1006)
+      {
+        switch (coord.top){
+
+        case 174:
+            $('#seven>.tag').fadeIn('slow');
+        break;
+
+        case 262:
+          $('#fourteen>.tag').fadeIn('slow');
+        break;
+
+        case 350:
+          $('#twenty-one>.tag').fadeIn('slow');
+        break;
+
+        case 438:
+          $('#twenty-eight>.tag').fadeIn('slow');
+        break;
+
+        case 536:
+          console.log('NOT YET');
+        break;
+      }
+      }
     }
   });
 
