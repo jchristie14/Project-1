@@ -111,10 +111,16 @@ h1 {
   width: 40px;
   left: 824px;
   top: 86px;
-  background-image: url(images/copTest.png);
-/*   transition: top .75s, left 1s;
-  transition-timing-function: linear; */
+  background: url(images/copSprite2.png) no-repeat 0 0;
+
 }
+
+.cop.walkRight       { background-position: -50px -50px; }
+.cop.walkLeft  { background-position: -40px -50px; }
+.cop             { background-position: 0px 0px; }
+
+
+
 
 
 ul {
@@ -132,15 +138,20 @@ li {
   padding: 20px;
   border: 3px solid red;
   margin: auto;
+  height: 40px;
 }
 
 #score{
   width: 25%;
+  font-family: Inconsolata;
 }
 #title{
   width: 50%;
+  font-family: Inconsolata;
+  background-color: white;
 }
 #reset{
   width: 5%;
+  font-family: Inconsolata;
 }
 

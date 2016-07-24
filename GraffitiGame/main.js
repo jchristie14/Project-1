@@ -372,24 +372,31 @@ function cop(){
     var q = Math.floor(Math.random()*5);
     createCop(w);
     copRoute[q](w);
-    // animateCop(w);
     w++;
              }
   }, 3000)
 
 }
 
-// cop()
+cop()
 
 
-var tagPrompt = prompt("Enter your initials!");
-var $tag = $('<p class="tag">'+tagPrompt+'</p>');
-$tag.hide();
-$tag.appendTo('.tagTarget');
-$tag.appendTo('.tagTargetGround')
+// var tagPrompt = prompt("Enter your initials!");
+// var $tag = $('<p class="tag">'+tagPrompt+'</p>');
+// $tag.hide();
+// $tag.appendTo('.tagTarget');
+// $tag.appendTo('.tagTargetGround')
+
+// setInterval(function() {
+//       console.log('toggling');
+//       $('.cop').toggleClass('walkRight');
+//     }, 250)
 
 
-
+// setInterval(function() {
+//       console.log('toggling');
+//       $('.cop').toggleClass('walkRight');
+//     }, 250)
 
 
 
