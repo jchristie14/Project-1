@@ -111,8 +111,8 @@ h1 {
   width: 40px;
   left: 824px;
   top: 86px;
-  background: url(images/copSprite2.png) no-repeat 0 0;
-
+/*   background: url(images/copSprite2.png) no-repeat 0 0;
+ */
 }
 
 .cop.walkRight       { background-position: -50px -50px; }
@@ -144,6 +144,8 @@ li {
 #score{
   width: 25%;
   font-family: Inconsolata;
+  font-size: 18pt;
+  color: white;
 }
 #title{
   width: 50%;
@@ -153,5 +155,10 @@ li {
 #reset{
   width: 5%;
   font-family: Inconsolata;
+  color: white;
+  text-align: center;
+  margin: auto;
+  background-color: red;
+  font-size: 18pt;
 }
 

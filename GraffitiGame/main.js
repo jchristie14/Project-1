@@ -7,6 +7,8 @@
   var $mario = $('#mario');
   var $apt = $('#apt');
   var $body = $('body');
+  var tag = 0;
+  var $score = $('#score').text('SCORE: '+tag);
   $body.keydown(function(event){
     if(event.which === 39){    //right key
       var $marioMov = $mario.css("left");
@@ -155,38 +157,13 @@
       }
       }
       else console.log('stop')}
-      // if ($marioChec = 51)
-    //   var $marioMov = $mario.css("top");
-    //   $marioMov = $marioMov.substring(0, $marioMov.length-2)
-    //   $marioMov = Number($marioMov)
 
-    // }
   })
 
 
-  // var collDetect = function(){
-  //   var copLoc = $('.cop').css("left")
-  //   copLoc = copLoc.substring(0, copLoc.length-2);
-  //   copLoc = Number(copLoc)
-  //   console.log(copLoc)
-  //   var marLoc = $mario.css("left")
-  //   marLoc = marLoc.substring(0, marLoc.length-2);
-  //   marLoc = Number(marLoc)
-  //   var marTop = $mario.css("top");
-  //   marTop = marTop.substring(0, marTop.length-2);
-  //   marTop = Number(marTop);
-  //   var copTop = $('.cop').css("top");
-  //   copTop = copTop.substring(0, copTop.length-2);
-  //   copTop = Number(copTop);
-  //   if (40 >=Math.abs(marLoc-copLoc) && marTop===copTop){
-  //     alert('Jail!!!!')}
-  //   else if (40>=Math.abs(copLoc-marLoc)&&marTop===copTop){
-  //     alert('tst')
-  //   }
-  // }
 
 function createCop(num){
-  var cop = $('<img class="cop" id=cop'+num+' src="images/copTest.png"/>');
+  var cop = $('<img class="cop" id=cop'+num+' src="images/coptest2.png"/>');
   $('#apt').append(cop);
 }
 
@@ -363,6 +340,28 @@ $('#cop'+num)
 }
 ]
 
+var lose=function(){
+  alert('YOU GOT CAUGHT!!!')
+}
+
+
+var collDetectB=function(el){
+
+    $('.cop').each(function(){
+    var marLoc = $mario.position();
+    var copLoc = $(this).position();
+    if (40 >=Math.abs(marLoc.left-copLoc.left)){
+      if (50>=Math.abs(marLoc.top-copLoc.top)){lose()}
+      else if(50>=Math.abs(copLoc.top-marLoc.top)){lose()}
+}
+    else if (40>=Math.abs(copLoc.left-marLoc.left)){
+       if (50>=Math.abs(marLoc.top-copLoc.top)){lose()}
+      else if(50>=Math.abs(copLoc.top-marLoc.top)){lose()}
+
+  }
+
+})}
+
 
 function cop(){
   var w = 1;
@@ -370,44 +369,48 @@ function cop(){
   setInterval(function(){
     {
     var q = Math.floor(Math.random()*5);
+
     createCop(w);
     copRoute[q](w);
+    $('.cop').each(function(){
+
+    var copLoc = $(this).position();
+    if (copLoc.left === -100){
+      $(this).remove();
+    }
+    else if (copLoc.left === 1500){
+      $(this).remove();
+    }
+    });
     w++;
              }
   }, 3000)
 
 }
 
+
+
+createCop('y');
+copRoute[0]('y');
 cop()
 
 
-// var tagPrompt = prompt("Enter your initials!");
-// var $tag = $('<p class="tag">'+tagPrompt+'</p>');
-// $tag.hide();
-// $tag.appendTo('.tagTarget');
-// $tag.appendTo('.tagTargetGround')
-
-// setInterval(function() {
-//       console.log('toggling');
-//       $('.cop').toggleClass('walkRight');
-//     }, 250)
+var tagPrompt = prompt("Enter your initials!");
+var $tag = $('<p class="tag">'+tagPrompt+'</p>');
+$tag.hide();
+$tag.appendTo('.tagTarget');
+$tag.appendTo('.tagTargetGround')
 
 
-// setInterval(function() {
-//       console.log('toggling');
-//       $('.cop').toggleClass('walkRight');
-//     }, 250)
-
-
-
-
-// setInterval(collDetect, 1000);
+setInterval(collDetectB, 300);
 
   $body.keydown(function(event){
     if(event.which === 32){
       var coord = $mario.position()
       if (coord.left === 486)
       {
+        tag += 1;
+        $score.text('SCORE: '+tag);
         switch (coord.top){
 
         case 174:
@@ -435,6 +438,8 @@ cop()
 
       else if (coord.left === 806)
       {
+        tag += 1;
+        $score.text('SCORE: '+tag);
         switch (coord.top){
 
         case 174:
@@ -461,6 +466,8 @@ cop()
 
       else if (coord.left === 1006)
       {
+        tag += 1;
+        $score.text('SCORE: '+tag);
         switch (coord.top){
 
         case 174:
@@ -485,6 +492,7 @@ cop()
       }
       }
     }
+    if (tag ===4){alert('YOU WIN!!!!')}
   });
 
 
