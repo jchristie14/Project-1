@@ -16,7 +16,7 @@ h1 {
 
 #setting {
   clear: both;
-  margin-top: 0;
+  margin-top: -25px;
 }
 #apt {
   background-image: url(images/testBackground.jpeg);
