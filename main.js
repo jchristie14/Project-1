@@ -166,7 +166,7 @@
 
 
 function createCop(num){
-  var cop = $('<img class="cop" id=cop'+num+' src="images/coptest2.png"/>');
+  var cop = $('<img class="cop" id=cop'+num+' src="images/copTest2.png"/>');
   $('#apt').append(cop);
 }
 
