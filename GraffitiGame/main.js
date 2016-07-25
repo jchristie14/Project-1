@@ -1,7 +1,7 @@
 "use strict";
 (function(){
   console.log('javascript loaded');
-  $(document).ready(function(){
+  window.onload=function(){
 
 // I used MDN's pong game to plan the collision detection and I used stackoverflow to solve a lot of problems as they came up.
 
@@ -400,7 +400,7 @@ var tagPrompt = prompt("Enter the two initials you want to tag!");
 var $tag = $('<p class="tag">'+tagPrompt+'</p>');
 $tag.hide();
 $tag.appendTo('.tagTarget');
-$tag.appendTo('.tagTargetGround')
+$tag.appendTo('.tagTargetGround');
 
 
 var collDet = setInterval(collDetectB, 300);
@@ -575,5 +575,5 @@ $('#reset').click(function() {
     location.reload();
 });
 
-})
+}
 })();

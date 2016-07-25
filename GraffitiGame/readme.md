@@ -1,0 +1,7 @@
+My game asks the user to enter two initials that he or she wants to tag on a building. The user then moves around the building hitting the spacebar to make tags appear on the walls of a building. Police officers move down from the roof and walk back and forth around the building trying to catch the player. When the player loses, it triggers an alert and removes the player from the screen. When the player wins, an alert is triggered and the collision detection is turned off.
+
+The tags appear using elements that are faded in when the user hits the spacebar in front of the wall panels. The collision detection measures the location of the player and the cops every 300 ms. As each cop is created, one of five paths is randomly chosen from an array and this is the path that the cop follows for the entire game. The function that creates new cops also removes cops who have cycled through the building.
+
+A technical problem that I found late and never figure out is that the tag is not appended to one of the building's panels--panel 28 in the html. I worked with this for a while, finished other things, came back to it, and could never figure it out.
+
+I'm not very happy with the appearance of the game. The images that are displayed aren't very good--it's a problem that I kept putting off, then never had time to address. I intended for the bottom row to look like the groundfloor of a building, but never built these panels.
