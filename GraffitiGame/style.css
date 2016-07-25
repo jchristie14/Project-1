@@ -49,6 +49,19 @@ h1 {
   clear: both;
 }
 
+.rowThree {
+  width: 728px;
+  height: 88px;
+  margin: 0;
+}
+
+.rowFour {
+  width: 728px;
+  height: 88px;
+  margin: 0;
+  clear: both;
+}
+
 .ground {
   width: 728px;
   height: 98px;
@@ -65,6 +78,16 @@ h1 {
   position: relative;
   display: inline-block;
   background-image: url(images/window.png);
+}
+
+.ladder {
+  width: 104px;
+  height: 88px;
+  margin: auto;
+  float: left;
+  position: relative;
+  display: inline-block;
+  background-image: url(images/ladder.png);
 }
 
 .window p {
@@ -94,6 +117,8 @@ h1 {
   transform: translate(0, -50%);
   text-align: center;
   font-size: 300%;
+  font-family: 'Permanent Marker', cursive;
+  color: rgba(255, 0, 0, 0.6);
 }
 
 #mario {
@@ -111,16 +136,8 @@ h1 {
   width: 40px;
   left: 824px;
   top: 86px;
-/*   background: url(images/copSprite2.png) no-repeat 0 0;
- */
+
 }
-
-.cop.walkRight       { background-position: -50px -50px; }
-.cop.walkLeft  { background-position: -40px -50px; }
-.cop             { background-position: 0px 0px; }
-
-
-
 
 
 ul {
@@ -161,4 +178,13 @@ li {
   background-color: red;
   font-size: 18pt;
 }
+
+#reset:hover{
+  background-color: darkcyan;
+}
+
+#reset:active{
+  background-color: darkgreen;
+}
+
 

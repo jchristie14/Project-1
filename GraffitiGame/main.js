@@ -3,6 +3,9 @@
   console.log('javascript loaded');
   $(document).ready(function(){
 
+// I used MDN's pong game to plan the collision detection and I used stackoverflow to solve a lot of problems as they came up.
+
+// The minimum viable product is a game with a controller, that keeps score (this includes reacting to winning events), and informs the player if he or she loses or wins. In this game specifically, that means that cops have to run around and the panels have to change color when they are tagged.
 
   var $mario = $('#mario');
   var $apt = $('#apt');
@@ -340,9 +343,7 @@ $('#cop'+num)
 }
 ]
 
-var lose=function(){
-  alert('YOU GOT CAUGHT!!!')
-}
+
 
 
 var collDetectB=function(el){
@@ -366,7 +367,8 @@ var collDetectB=function(el){
 function cop(){
   var w = 1;
 
-  setInterval(function(){
+
+var copCreator = setInterval(function(){
     {
     var q = Math.floor(Math.random()*5);
 
@@ -385,7 +387,6 @@ function cop(){
     w++;
              }
   }, 3000)
-
 }
 
 
@@ -395,38 +396,74 @@ copRoute[0]('y');
 cop()
 
 
-var tagPrompt = prompt("Enter your initials!");
+var tagPrompt = prompt("Enter the two initials you want to tag!");
 var $tag = $('<p class="tag">'+tagPrompt+'</p>');
 $tag.hide();
 $tag.appendTo('.tagTarget');
 $tag.appendTo('.tagTargetGround')
 
 
-setInterval(collDetectB, 300);
+var collDet = setInterval(collDetectB, 300);
+
+
+var win = function(){
+
+  if (tag ===4){
+    alert('YOU WIN!!!!');
+    clearInterval(collDet);
+  }
+}
+
+var lose=function(){
+  alert('YOU GOT CAUGHT!!!');
+  $mario.remove()
+  clearInterval(collDet);
+}
+
+
 
   $body.keydown(function(event){
     if(event.which === 32){
       var coord = $mario.position()
       if (coord.left === 486)
       {
-        tag += 1;
-        $score.text('SCORE: '+tag);
+
         switch (coord.top){
 
         case 174:
-            $('#two>.tag').fadeIn('slow');
+            $('#two>.tag').fadeIn('slow', function(){
+              tag += 1;
+              $score.text('SCORE: '+tag)
+              win();
+              $(this).removeClass('tag');
+            });
         break;
 
         case 262:
-          $('#nine>.tag').fadeIn('slow');
+          $('#nine>.tag').fadeIn('slow', function(){
+              tag += 1;
+              $score.text('SCORE: '+tag)
+              win();
+              $(this).removeClass('tag');
+            });
         break;
 
         case 350:
-          $('#sixteen>.tag').fadeIn('slow');
+          $('#sixteen>.tag').fadeIn('slow', function(){
+              tag += 1;
+              $score.text('SCORE: '+tag)
+              win();
+              $(this).removeClass('tag');
+            });
         break;
 
         case 438:
-          $('#twenty-three>.tag').fadeIn('slow');
+          $('#twenty-three>.tag').fadeIn('slow', function(){
+              tag += 1;
+              $score.text('SCORE: '+tag)
+              win();
+              $(this).removeClass('tag');
+            });
         break;
 
         case 536:
@@ -438,24 +475,43 @@ setInterval(collDetectB, 300);
 
       else if (coord.left === 806)
       {
-        tag += 1;
-        $score.text('SCORE: '+tag);
+
         switch (coord.top){
 
         case 174:
-            $('#five>.tag').fadeIn('slow');
+            $('#five>.tag').fadeIn('slow', function(){
+              tag += 1;
+              $score.text('SCORE: '+tag)
+              win();
+              $(this).removeClass('tag');
+            });
         break;
 
         case 262:
-          $('#twelve>.tag').fadeIn('slow');
+          $('#twelve>.tag').fadeIn('slow', function(){
+              tag += 1;
+              $score.text('SCORE: '+tag)
+              win();
+              $(this).removeClass('tag');
+            });
         break;
 
         case 350:
-          $('#nineteen>.tag').fadeIn('slow');
+          $('#nineteen>.tag').fadeIn('slow', function(){
+              tag += 1;
+              $score.text('SCORE: '+tag)
+              win();
+              $(this).removeClass('tag');
+            });
         break;
 
         case 438:
-          $('#twenty-six>.tag').fadeIn('slow');
+          $('#twenty-six>.tag').fadeIn('slow', function(){
+              tag += 1;
+              $score.text('SCORE: '+tag)
+              win();
+              $(this).removeClass('tag');
+            });
         break;
 
         case 536:
@@ -466,24 +522,42 @@ setInterval(collDetectB, 300);
 
       else if (coord.left === 1006)
       {
-        tag += 1;
-        $score.text('SCORE: '+tag);
         switch (coord.top){
 
         case 174:
-            $('#seven>.tag').fadeIn('slow');
+            $('#seven>.tag').fadeIn('slow', function(){
+              tag += 1;
+              $score.text('SCORE: '+tag)
+              win();
+              $(this).removeClass('tag');
+            });
         break;
 
         case 262:
-          $('#fourteen>.tag').fadeIn('slow');
+          $('#fourteen>.tag').fadeIn('slow', function(){
+              tag += 1;
+              $score.text('SCORE: '+tag)
+              win();
+              $(this).removeClass('tag');
+            });
         break;
 
         case 350:
-          $('#twenty-one>.tag').fadeIn('slow');
+          $('#twenty-one>.tag').fadeIn('slow', function(){
+              tag += 1;
+              $score.text('SCORE: '+tag)
+              win();
+              $(this).removeClass('tag');
+            });
         break;
 
         case 438:
-          $('#twenty-eight>.tag').fadeIn('slow');
+          $('#twenty-eight>.tag').fadeIn('slow', function(){
+              tag += 1;
+              $score.text('SCORE: '+tag)
+              win();
+              $(this).removeClass('tag');
+            });
         break;
 
         case 536:
@@ -492,10 +566,14 @@ setInterval(collDetectB, 300);
       }
       }
     }
-    if (tag ===4){alert('YOU WIN!!!!')}
+
+
+
   });
 
-
+$('#reset').click(function() {
+    location.reload();
+});
 
 })
 })();
